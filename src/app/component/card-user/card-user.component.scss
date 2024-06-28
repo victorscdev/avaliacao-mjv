@@ -1,0 +1,33 @@
+:host {
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    .card-user {
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent), var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+        background: #ebeaea;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            .btn-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: .5rem;
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
