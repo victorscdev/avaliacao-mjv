@@ -1,13 +1,8 @@
-import { Injectable } from '@angular/core';
-
-@Injectable()
-export class FetchBase {
+export class Fetch {
     private url = 'https://dummyapi.io/data/v1';
     private token = '64cbeddc2535491d86990b6e';
 
-    constructor() { }
-
-    private fetchConfig(method: string, payload?: any) {
+    private config(method: string, payload?: any) {
         return {
             method: method,
                 headers: {
@@ -18,9 +13,9 @@ export class FetchBase {
         }
     }
 
-    public async fetchData(endpoint: string, method: string): Promise<any> {
+    public async request(endpoint: string, method: string, payload?: any): Promise<any> {
         try {
-            const response = await fetch(`${this.url}/${endpoint}`, this.fetchConfig(method));
+            const response = await fetch(`${this.url}/${endpoint}`, this.config(method, payload));
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             return await response.json();
         } catch (error) {

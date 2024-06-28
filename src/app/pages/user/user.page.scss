@@ -1,0 +1,51 @@
+:host {
+    .user-view {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            height: 72px;
+            width: 72px;
+        }
+        button {
+            &.btn-success,
+            &.btn-secondary {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    fieldset {
+        border-width: 2px;
+        border-style: groove;
+        border-color: rgb(192, 192, 192);
+        border-image: initial;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 40px;
+        padding: 1rem;
+        position: relative;
+        width: 100%;
+
+        legend {
+            float: left;
+            width: auto;
+            padding: 0 4px;
+            margin-bottom: 0.5rem;
+            position: absolute;
+            top: -20px;
+            background: #fff;
+            display: inline-flex;
+        }
+
+        div {
+            width: calc(50% - 16px);
+        }
+
+        input[disabled] {
+            cursor: not-allowed;
+        }
+    }
+}

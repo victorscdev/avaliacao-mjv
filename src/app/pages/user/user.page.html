@@ -1,0 +1,92 @@
+<div class="container" *ngIf="user">
+    <div class="row mb-4">
+        <div class="col">
+            <button type="button" class="btn btn-primary" (click)="onClickBackButton()">Back to user list</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="user-view">
+                <img src="{{ user.picture }}" alt="{{ user.firstName }}">
+                
+                <button *ngIf="!editable" type="button" class="btn btn-secondary" (click)="onClickEditUser()" id="liveToastBtn">Edit User</button>
+                <button *ngIf="editable" type="button" class="btn btn-success" (click)="onClickSaveEdit()">Save edit</button>
+
+                <form class="user-info" #userInfoForm>
+
+                    <fieldset>
+                        <legend>Personal Data</legend>
+
+                        <div>
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" [value]="user.email" disabled>
+                        </div>
+
+                        <div>
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" [value]="user.title" [disabled]="!editable">
+                        </div>
+
+                        <div>
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" [value]="user.firstName" [disabled]="!editable">
+                        </div>
+
+                        <div>
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" [value]="user.lastName" [disabled]="!editable">
+                        </div>
+
+                        <div>
+                            <label for="gender" class="form-label">Gender</label>
+                            <input type="text" class="form-control" id="gender" [value]="user.gender" [disabled]="!editable">
+                        </div>
+
+                        <!-- <div>
+                            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                            <input type="text" class="form-control" id="dateOfBirth" [value]="user.dateOfBirth" [disabled]="!editable">
+                        </div> -->
+
+                        <div>
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" [value]="user.phone" [disabled]="!editable">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Location</legend>
+                    
+                        <div>
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" [value]="user.city" [disabled]="!editable">
+                        </div>
+                    
+                        <div>
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="country" [value]="user.country" [disabled]="!editable">
+                        </div>
+                    
+                        <div>
+                            <label for="state" class="form-label">State</label>
+                            <input type="text" class="form-control" id="state" [value]="user.state" [disabled]="!editable">
+                        </div>
+                    
+                        <div>
+                            <label for="street" class="form-label">Street</label>
+                            <input type="text" class="form-control" id="street" [value]="user.street" [disabled]="!editable">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<toast-component 
+    *ngIf="isShowToast" 
+    [isShow]="isShowToast"
+    [text]="textToast"
+    [background]="backgroundToast"
+    >
+</toast-component>

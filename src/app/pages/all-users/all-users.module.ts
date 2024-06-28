@@ -2,8 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterUtils } from "core/utils/router.utils";
 import { AllUsersPage } from "./all-users.page";
-import { FetchBase } from "core/data/fetch-base";
-import { UserService } from "core/services/user.service";
+import { UserGateway } from "core/infrastructure/gateways/user.gateway";
 import { CardUserModule } from "src/app/component/card-user/card-user.module";
 
 @NgModule({
@@ -14,8 +13,7 @@ import { CardUserModule } from "src/app/component/card-user/card-user.module";
         CardUserModule
     ],
     providers: [
-        FetchBase,
-        UserService
+        UserGateway
     ],
     exports: [AllUsersPage],
 })

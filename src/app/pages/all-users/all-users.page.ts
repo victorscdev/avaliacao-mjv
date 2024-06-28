@@ -1,20 +1,19 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "core/services/user.service";
+import { UserGateway } from "core/infrastructure/gateways/user.gateway"; 
 
 @Component({
     templateUrl: "./all-users.page.html",
     styleUrls: ["./all-users.page.scss"]
 })
 export class AllUsersPage implements OnInit {
-    title: string = "All Users";
     users: any
 
     constructor(
-        private _userService: UserService
+        private _UserGateway: UserGateway
     ) { }
 
     ngOnInit(): void {
-        this._userService.getData()
+        this._UserGateway.getList()
             .then((response) => {
                 this.users = response.data
             })
