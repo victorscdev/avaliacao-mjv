@@ -8,6 +8,10 @@ import { RouterUtils } from "core/utils/router.utils";
 })
 export class CardUserComponent {
     @Input() data: any
+    @Input() allUsers: any
+
+    isOpenModal: boolean = false
+    deleteIdUser: string = ""
 
     constructor(
         private _routerUtils: RouterUtils
@@ -15,5 +19,10 @@ export class CardUserComponent {
 
     onBtnViewClick(id: string) {
         this._routerUtils.goToLink(`users/${id}`)
+    }
+    
+    onClickOpenModal(id: string) {
+        this.isOpenModal = !this.isOpenModal
+        this.deleteIdUser = id
     }
 }

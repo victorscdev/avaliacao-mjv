@@ -10,7 +10,7 @@ import { CardUserModule } from "src/app/component/card-user/card-user.module";
     imports: [
         CommonModule,
         RouterUtils.createRouterPage("", AllUsersPage),
-        CardUserModule
+        CardUserModule,
     ],
     providers: [
         UserGateway,

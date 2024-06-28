@@ -8,7 +8,7 @@
                     person
                 </span>
             </button>
-            <button type="button" class="btn btn-danger" tooltip="Delete User">
+            <button type="button" class="btn btn-danger" tooltip="Delete User" (click)="onClickOpenModal(data.id)">
                 <span class="material-symbols-outlined">
                     delete
                 </span>
@@ -16,3 +16,6 @@
         </div>
     </div>
 </div>
+
+<modal-delete-user-component [isOpen]="isOpenModal" [deleteIdUser]="deleteIdUser" [allUsers]="allUsers">
+</modal-delete-user-component>

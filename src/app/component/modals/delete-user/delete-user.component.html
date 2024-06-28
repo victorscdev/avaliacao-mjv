@@ -1,0 +1,21 @@
+<div class="modal-delete" [ngClass]="{'show': isOpen}">
+    <div class="overlay">
+        <div class="modal-container">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Delete User</h1>
+                </div>
+                <div class="modal-body">
+                    <p>Are you right in deleting this user?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="isOpen = false">No</button>
+                    <button type="button" class="btn btn-primary" (click)="onClickDelete()">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<toast-component *ngIf="isShowToast" [isShow]="isShowToast" [text]="textToast" [background]="backgroundToast">
+</toast-component>

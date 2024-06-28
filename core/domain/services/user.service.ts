@@ -17,7 +17,7 @@ export class UserService extends UserGateway implements IUserRepository {
     }
 
     delete(id: string): Promise<void> {
-        throw new Error("Method not implemented.");
+        return this.deleteUserById(id)
     }
 
     createUserData(user: IUser) {
@@ -37,5 +37,15 @@ export class UserService extends UserGateway implements IUserRepository {
             street: user.location.street,
             timezone: user.location.timezone,
         }
+    }
+
+    deleteUserDataById(users: any, userId: string) {
+        let newArray = [...users]
+        newArray.forEach((user, index) => {
+            if (user.id === userId) {
+                users.splice(0, index)
+            }
+        })
+        return newArray
     }
 }

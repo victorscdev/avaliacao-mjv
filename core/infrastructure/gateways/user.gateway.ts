@@ -17,4 +17,8 @@ export class UserGateway extends Fetch {
     putUpdateUser(id: string, payload: any) {
         return this.request(`user/${id}`, 'PUT', payload)
     }
+    
+    deleteUserById(id: string) {
+        return this.request(`user/${id}`, 'DELETE')
+    }
 }
