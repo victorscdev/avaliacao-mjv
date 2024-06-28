@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'all-users', loadChildren: () => import('../app/pages/all-users/all-users.module').then(m => m.AllUsersModule) },
   { path: 'users/:id', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule) },
+  { path: 'new-user', loadChildren: () => import('./pages/new-user/new-user.module').then(m => m.NewUserModule) },
   { path: '**', redirectTo: 'all-users' }
 ];
 

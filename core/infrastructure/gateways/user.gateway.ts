@@ -2,8 +2,12 @@ import { Fetch } from "core/infrastructure/database/fetch.database";
 
 export class UserGateway extends Fetch {
 
+    createUser(payload: any) {
+        return this.request('user/create', 'POST', payload)
+    }
+
     getList() {
-        return this.request('user?limit=10', 'GET')
+        return this.request('user', 'GET')
     }
 
     getUserById(id: string) {

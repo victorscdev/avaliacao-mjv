@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row mb-4">
+        <div class="col">
+            <button type="button" class="btn btn-primary" (click)="onClickBackButton()">Back to user list</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="new-user">
+                <button type="button" class="btn btn-success" (click)="onClickSaveUser()">Save user</button>
+
+                <form class="user-info" #userInfoForm>
+                    <fieldset>
+                        <legend>Personal Data</legend>
+                    
+                        <div>
+                            <label for="email" class="form-label" required>E-mail</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                    
+                        <div>
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title">
+                        </div>
+                    
+                        <div>
+                            <label for="firstName" class="form-label" required>First Name</label>
+                            <input type="text" class="form-control" id="firstName">
+                        </div>
+                    
+                        <div>
+                            <label for="lastName" class="form-label" required>Last Name</label>
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                    
+                        <div>
+                            <label for="gender" class="form-label">Gender</label>
+                            <input type="text" class="form-control" id="gender">
+                        </div>
+                    
+                        <div>
+                            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="dateOfBirth">
+                        </div>
+                    
+                        <div>
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Location</legend>
+                    
+                        <div>
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                    
+                        <div>
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="country">
+                        </div>
+                    
+                        <div>
+                            <label for="state" class="form-label">State</label>
+                            <input type="text" class="form-control" id="state">
+                        </div>
+                    
+                        <div>
+                            <label for="street" class="form-label">Street</label>
+                            <input type="text" class="form-control" id="street">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<toast-component 
+    *ngIf="isShowToast" 
+    [isShow]="isShowToast" 
+    [text]="textToast" 
+    [background]="backgroundToast">
+</toast-component>

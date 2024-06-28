@@ -13,7 +13,8 @@ import { CardUserModule } from "src/app/component/card-user/card-user.module";
         CardUserModule
     ],
     providers: [
-        UserGateway
+        UserGateway,
+        RouterUtils
     ],
     exports: [AllUsersPage],
 })

@@ -5,7 +5,7 @@ import { UserGateway } from "core/infrastructure/gateways/user.gateway";
 export class UserService extends UserGateway implements IUserRepository {
 
     create(user: IUser): Promise<void> {
-        throw new Error("Method not implemented.");
+        return this.createUser(user)
     }
 
     read(id: string): Promise<IUser | null | any> {
